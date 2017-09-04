@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
   
-    "name": "atsumori mouse",
+    "name": "atsumori-click",
     "description": "atsumori",
     "version": "1.0",
     "permissions": [
