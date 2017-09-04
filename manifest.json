@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+  
+    "name": "atsumori mouse",
+    "description": "atsumori",
+    "version": "1.0",
+    "permissions": [
+      "tabs",
+      "<all_urls>",
+      "management"
+    ],
+
+    "options_page": "options.html",
+    
+    "browser_action": {
+      "default_icon": "atsumori.png"
+    },
+    "icons":{
+      "32":"off.png",
+      "128": "atsumori.png"
+    },
+    "web_accessible_resources": [
+      "atsumori.gif"
+    ],
+
+    "content_scripts": [
+      {
+        "matches": ["http://*/*","https://*/*"],
+        "js": ["script.js"]     
+      }
+    ],
+
+    "background": {
+        "scripts": ["background.js"],
+        "persisttent": false
+    }
+}
