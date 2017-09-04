@@ -11,7 +11,7 @@ document.addEventListener('mousedown', function(e) {
     //send message to background.js
     if(Math.floor(Math.random()*9) === 0){ //10回に1回実行
         chrome.runtime.sendMessage({},function(response){
-            console.log(response);
+            //console.log(response);
             if(response.execute === true){
                 var atsumoriArea = document.getElementsByTagName("body")[0].appendChild(div);
                 atsumoriArea.appendChild(img);
