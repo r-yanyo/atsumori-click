@@ -9,16 +9,21 @@ document.addEventListener('mousedown', function(e) {
     img.setAttribute('height',"500px");
 
     //send message to background.js
-    if(Math.floor(Math.random()*9) === 0){ //10回に1回実行
-        chrome.runtime.sendMessage({},function(response){
-            //console.log(response);
-            if(response.execute === true){
-                var atsumoriArea = document.getElementsByTagName("body")[0].appendChild(div);
-                atsumoriArea.appendChild(img);
-                setTimeout(function(){
-                    document.getElementsByTagName("body")[0].removeChild(div);
-                },3000)
-            }
-        });
-    }
+    chrome.storage.sync.get(null, function(items) {
+        let probability = items.probability || 10;
+        if(Math.floor(Math.random()*probability) === 0){ //X回に1回実行
+            chrome.runtime.sendMessage({apologize: false},function(response){
+                if(response.execute === true){
+                    var atsumoriArea = document.getElementsByTagName("body")[0].appendChild(div);
+                    atsumoriArea.appendChild(img);
+                    setTimeout(function(){
+                        document.getElementsByTagName("body")[0].removeChild(div);
+                        chrome.runtime.sendMessage({apologize: true},function(response){
+                            //do nothing
+                        });
+                    },3000)
+                }
+            });
+        }
+    });
 }, false);

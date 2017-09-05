@@ -2,7 +2,7 @@
     "manifest_version": 2,
   
     "name": "atsumori-click",
-    "description": "ブラウザ内をクリックすると10回に1回「熱盛ｲﾂ!!!」が出る。",
+    "description": "ブラウザ内をクリックすると20回に1回「熱盛ｲﾂ!!!」が出る。",
     "version": "1.0",
     "permissions": [
       "tabs",
@@ -11,6 +11,8 @@
       "storage"
     ],
     
+    "options_page": "options.html",
+
     "browser_action": {
       "default_icon": "files/atsumori.png"
     },
