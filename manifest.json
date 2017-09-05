@@ -2,12 +2,13 @@
     "manifest_version": 2,
   
     "name": "atsumori-click",
-    "description": "atsumori",
+    "description": "ブラウザ内をクリックすると10回に1回「熱盛ｲﾂ!!!」が出る。",
     "version": "1.0",
     "permissions": [
       "tabs",
       "<all_urls>",
-      "management"
+      "management",
+      "storage"
     ],
 
     "options_page": "options.html",
