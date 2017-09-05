@@ -1,14 +1,14 @@
 var toggle = true;
 chrome.browserAction.onClicked.addListener(function(tab){
-    if(toggle) chrome.browserAction.setIcon({path: "off.png"});
-    else chrome.browserAction.setIcon({path: "atsumori.png"});
+    if(toggle) chrome.browserAction.setIcon({path: "files/off.png"});
+    else chrome.browserAction.setIcon({path: "files/atsumori.png"});
     toggle = !toggle;
 });
 
 chrome.runtime.onMessage.addListener(
     function(req,sender,sendResponse){
         if(toggle){
-            let sound = new Audio("atsumori.wav");
+            let sound = new Audio("files/atsumori.wav");
             sound.load();
             sound.play();
 

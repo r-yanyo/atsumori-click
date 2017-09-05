@@ -10,18 +10,16 @@
       "management",
       "storage"
     ],
-
-    "options_page": "options.html",
     
     "browser_action": {
-      "default_icon": "atsumori.png"
+      "default_icon": "files/atsumori.png"
     },
     "icons":{
-      "32":"off.png",
-      "128": "atsumori.png"
+      "32":"files/off.png",
+      "128": "files/atsumori.png"
     },
     "web_accessible_resources": [
-      "atsumori.gif"
+      "files/atsumori.gif"
     ],
 
     "content_scripts": [

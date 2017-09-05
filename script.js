@@ -3,7 +3,7 @@ document.addEventListener('mousedown', function(e) {
     var div = document.createElement("div");
     div.setAttribute('style',"position:fixed; bottom:-100px; right:-50px;z-index:100");
     var img = document.createElement("img");
-    var imgURL = chrome.runtime.getURL("atsumori.gif?" + (new Date).getTime());
+    var imgURL = chrome.runtime.getURL("files/atsumori.gif?" + (new Date).getTime());
     img.setAttribute("src", imgURL);
     img.setAttribute('width',"500px");
     img.setAttribute('height',"500px");
